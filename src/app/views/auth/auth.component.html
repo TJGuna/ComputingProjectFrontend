@@ -1,0 +1,105 @@
+<div class="text-center w-auto h-screen flex  mx-auto relative">
+    <div class="flex flex-col mx-auto w-[375px] justify-center">
+        <div class="p-[25px] bg-white shadow-lg mt-[22px]">
+            <p class="text-[#00000099] text-[14px] leading-[16px]">
+                Please sign-in to continue to:
+            </p>
+            <p
+                    class="text-[#56CBE5] text-[20px] leading-[24px] font-bold mt-[16px] mb-[30px]"
+            >
+                MAMA - Relationship Builder
+            </p>
+            <div
+                    *ngIf="misMatch"
+                    class="shadow-md -mt-3 flex border border-[#DDDDDD] h-[52px] w-full rounded-lg text-[#33691E] text-[16px] leading-[19px] tracking-[0.01px]"
+            >
+                <div
+                        class="w-[8px] rounded-l-2xl rounded-l-white h-[52px] bg-[#F4511E] -mt-[1px] -ml-[1px]"
+                ></div>
+                <div class="flex justify-between w-full h-full my-[18px]">
+                    <div class="text-[16px] ml-[11px]">
+                        Incorrect username or password
+                    </div>
+                    <div (click)="misMatch = !misMatch">
+                        <i
+                                class="fi-rr-cross cursor-pointer font-black mr-[21px] text-[#00000061] h-[12.59px] w-[12.59px]"
+                        ></i>
+                    </div>
+                </div>
+            </div>
+
+            <div  class="flex flex-col justify-center mt-[24px] space-y-[23px]">
+                <div
+                        class="text-[16px] w-full h-[56px] bg-[#F5F8FA] rounded-lg flex items-center"
+                >
+                    <i
+                            class="fi-rr-user text-[#56CAE5] pl-[16px] pr-[13px] text-[24px]"
+                    ></i>
+                    <input
+                            [(ngModel)]="userName"
+                            class="rounded-lg bg-[#F5F8FA] w-full  border-0 !ring-0 h-[56px] text-[16px] placeholder:text-[#00000061] placeholder:text-[16px] placeholder:leading-[24px]"
+                            placeholder="username"
+                            type="text"
+                    />
+                </div>
+                <div
+                        class="relative bg-[#F5F8FA] rounded-lg text-[16px] w-full h-[56px] flex items-center"
+                >
+                    <i
+                            class="fi-rr-lock text-[#56CAE5] pl-[16px] pr-[13px] text-[24px]"
+                    ></i>
+                    <input
+                            [(ngModel)]="password"
+                            [type]="hide ? 'text' : 'password'"
+                            class="rounded-lg bg-[#F5F8FA] w-full border-0 !ring-0 h-[52px] text-[16px] placeholder:text-[#00000061] placeholder:text-[16px] placeholder:leading-[24px]"
+                            placeholder="Password"
+                    />
+                    <div (click)="hide = !hide" class=" absolute eyesClosed mr-[15px] right-[10px] pt-1">
+                        <i
+                                *ngIf="hide; else eyeClosed"
+                                class="fi fi-rr-eye text-[#00000061]"
+                        ></i>
+                        <ng-template #eyeClosed>
+                            <i class="fi fi-rr-eye-crossed text-[#00000061]"></i>
+                        </ng-template>
+                    </div>
+                </div>
+                <button
+
+                        class="h-[48px] rounded-md bg-[#56CAE5] text-white text-[14px] tracking-wide leading-[16px] font-normal signin-btn"
+                        type="submit"
+                >
+                    SIGN IN
+                </button>
+<!--                <hr class="text-[#EFEFEF]" />-->
+<!--                <div-->
+<!--                        class="flex justify-center text-[14px] text-[#56CBE5] items-center"-->
+<!--                >-->
+<!--                    <p>Can’t Sign in ? &nbsp;</p>-->
+<!--                    <div class="w-[4px] h-[4px] bg-[#56CBE5] rounded-full flex"></div>-->
+<!--                    <p>&nbsp; Request Access</p>-->
+<!--                </div>-->
+            </div>
+        </div>
+<!--        <div-->
+<!--                class="flex justify-center text-[#56CBE5] items-center text-[12px] leading-[14px] mt-[20px]"-->
+<!--        >-->
+<!--            <p>Privacy Policy &nbsp;</p>-->
+<!--            <div class="w-[4px] h-[4px] bg-[#56CBE5] rounded-full flex"></div>-->
+<!--            <p>&nbsp; About Us &nbsp;</p>-->
+<!--            <div class="w-[4px] h-[4px] bg-[#56CBE5] rounded-full flex"></div>-->
+<!--            <p>&nbsp; Contact Us</p>-->
+<!--        </div>-->
+
+    </div>
+</div>
+<div class="flex fixed  bottom-[18px] w-full h-[32px]">
+    <div class="w-1/3 text-[#00000061] ml-[37px]">
+        MAMA Inc © 2022 - All Rights Reserved.
+    </div>
+</div>
+<img
+        alt=""
+        class="flex  w-screen h-screen top-0 -z-10 fixed"
+        src="./assets/images/login-background.jpg"
+/>
