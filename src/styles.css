@@ -1,4 +1,9 @@
-@import url('https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,3 +14,98 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mdc-notched-outline__notch{
     border-right-width: 0 !important;
 }
+
+html, body { height: 100%; }
+body { font-size: 13px }
+
+.mdc-notched-outline__notch{
+    border: 1px solid #0000001F !important;
+    border-right: none !important;
+}
+.mdc-notched-outline__notch ::after{
+    border:none !important;
+}
+.mdc-floating-label--float-above{
+    background-color: white !important;
+}
+.mdc-notched-outline__leading{
+    border: 1px solid #0000001F !important;
+    border-right: none !important;
+}
+.mdc-notched-outline__trailing{
+    border: 1px solid #0000001F !important;
+    border-left: none !important;
+}
+
+[type=text], input:where(:not([type])), [type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select {
+    --tw-shadow: none !important;
+}
+.mat-typography {
+    font-family: 'Raleway', sans-serif !important;
+}
+.mat-mdc-cell {
+    border-bottom-width:thin !important;
+    border-color: rgba(239, 239, 239, 0.85) !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
+    border-color: #009CB2 !important;
+
+}
+
+
+.mat-step-header{
+    border:none !important;
+    border-radius: 10px !important;
+    padding: 10px  !important;
+    background: linear-gradient(90deg, rgb(223, 223, 223) 0%, rgb(88, 186, 179) 42%, rgba(225, 225, 225, 0.59) 100%);
+    margin: 10px 0 0 0 !important;
+}
+.mat-stepper-vertical-line::before{
+    border-left-width: 0 !important;
+    margin-left: 0 !important;
+}
+.mat-stepper-vertical-line{
+    margin-left: 0 !important;
+
+}
+.mdc-data-table__cell, .mdc-data-table__header-cell{
+    padding: 0px !important;
+}
+.a {
+    margin-top: 20px !important;
+    width: 0 !important;
+    visibility: hidden;
+}
+.cdk-overlay-pane{
+    min-width: 200px !important;
+}
+.mat-mdc-cell{
+    color: #383838;
+    border-bottom-width: 0.01em !important;
+    border-color: rgba(239, 239, 239, 0.56) !important;
+}
+.mat-mdc-header-cell{
+    color: #2f2f2f;
+    font-weight: bold;
+    border-bottom-width: 0.15em !important;
+    border-color: rgba(229, 228, 228, 0.56) !important;
+}
+.mat-toolbar {
+    /*background-color: #56CAE5 !important;*/
+    background-color: transparent !important;
+}
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled){
+    background-color: #56CAE5 !important;
+    color: #009CB2 !important;
+}
+/*.mat-mdc-table {*/
+/*    background-color: skyblue !important;*/
+
+/*}*/
+.mat-mdc-row{
+    border-radius: 20px !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

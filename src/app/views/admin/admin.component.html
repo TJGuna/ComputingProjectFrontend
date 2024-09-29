@@ -264,9 +264,10 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col p-2 ">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white/90 shadow-Secondary shadow-sm border border-Secondary px-6 pb-4 rounded-md">
-            <div class="flex justify-center pt-4 h-16 shrink-0 items-center">
-                <img alt="Your Company" class="h-14 w-auto rounded-md" src="">
+        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-Secondary shadow-Secondary shadow-sm border border-Secondary px-6 pb-4 rounded-md">
+            <div class="flex justify-center  pt-4 h-16 shrink-0 items-center">
+                <img alt="Your Company" class="h-14 w-auto rounded-md" src="https://png.pngtree.com/png-clipart/20211219/original/pngtree-valentine-s-day-cupid-png-image_6971246.png">
+                <div class="text-3xl">MAMA</div>
             </div>
             <nav class="flex flex-1 flex-col">
                 <ul class="flex flex-1 flex-col gap-y-7" role="list">
@@ -291,10 +292,10 @@
                                 </a>
                             </li>
                             <li class="items-center cursor-pointer select-none">
-                                <a #assessment="routerLinkActive"
-                                   (click)="assessmentCondition = !assessmentCondition"
-                                   [ngClass]="assessment.isActive ? 'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                   [routerLink]="['assessment/EmployeeList']"
+                                <a #Clients="routerLinkActive"
+                                   (click)="ClientsCondition = !ClientsCondition"
+                                   [ngClass]="Clients.isActive ? 'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                   [routerLink]="['Clients/ClientList']"
                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
                                    routerLinkActive
                                 >
@@ -302,153 +303,68 @@
                                     <!--                                        <path d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" stroke-linecap="round" stroke-linejoin="round" />-->
                                     <!--                                    </svg>-->
                                     <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>
-                                    Assessment
+                                    Clients
                                 </a>
                             </li>
                             <li class="items-center cursor-pointer select-none">
                                 <a
-                                    #config="routerLinkActive"
-                                    (click)="configCondition = !configCondition"
-                                    [ngClass]="config.isActive ? 'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md px-2 pt-2 pb-1 text-sm leading-6 font-semibold "
-                                    routerLinkActive
+                                    #expertList="routerLinkActive"
+                                    [ngClass]="
+                                          expertList.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                    [routerLink]="['/Experts/ExpertList']"
+                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    routerLinkActive="routerLinkActive"
                                 >
-                                    <i class="fi fi-rr-it text-xl   group-hover:text-black "></i>
-                                    Configurations
-
-                                    <span class=" text-xl ">
-                                        <div *ngIf="configCondition; else upCatalog">
-                                          <i class="fi fi-rr-angle-small-up"></i>
-                                        </div>
-                                        <ng-template #upCatalog>
-                                          <i class="fi fi-rr-angle-small-down"></i>
-                                        </ng-template>
-                                      </span>
+                                    <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>Experts
                                 </a>
-                                <ul
-                                        [ngClass]="configCondition ? 'block' : 'hidden'"
-                                        class="list-disc list-inside pl-4 py-2 space-y-1"
-                                >
-                                    <a
-                                        #adminCatalogProducts="routerLinkActive"
-                                        [ngClass]="
-                                          adminCatalogProducts.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                        [routerLink]="['/config/periods']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Periods</li>
-                                    </a>
-                                    <a
-                                        #adminCatalogRemovedProducts="routerLinkActive"
-                                        [ngClass]="
-                                          adminCatalogRemovedProducts.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                        [routerLink]="['/config/goals']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Goals</li>
-                                    </a>
-                                    <a
-                                        #adminMetricsProducts="routerLinkActive"
-                                        [ngClass]="
-                                            adminMetricsProducts.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                        [routerLink]="['/config/metrics']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Metrics</li>
-                                    </a>
-                                    <a
-                                        #adminLocationProducts="routerLinkActive"
-                                        [ngClass]="
-                                            adminLocationProducts.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                        [routerLink]="['/config/location']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Location</li>
-                                    </a>
-
-                                </ul>
                             </li>
                             <li class="items-center cursor-pointer select-none">
                                 <a
-                                    #adminCatalog="routerLinkActive"
-                                    (click)="employeeCondition = !employeeCondition"
-                                    [ngClass]="adminCatalog.isActive ? 'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
-                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md px-2 pt-2 pb-1 text-sm leading-6 font-semibold "
-                                    routerLinkActive
+                                    #adminList="routerLinkActive"
+                                    [ngClass]="
+                                          adminList.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                    [routerLink]="['/Admin/AdminList']"
+                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    routerLinkActive="routerLinkActive"
                                 >
-                                    <i class="fi fi-rr-employees text-xl  group-hover:text-black "></i>
-                                    Employees
-                                    <span class=" text-xl ">
-                                        <div *ngIf="employeeCondition; else upCatalog">
-                                          <i class="fi fi-rr-angle-small-up"></i>
-                                        </div>
-                                        <ng-template #upCatalog>
-                                          <i class="fi fi-rr-angle-small-down"></i>
-                                        </ng-template>
-                                  </span>
+                                    <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>Admins
                                 </a>
-                                <ul
-                                        [ngClass]="employeeCondition ? 'block' : 'hidden'"
-                                        class="list-disc list-inside pl-4"
+                            </li>
+                            <li class="items-center cursor-pointer select-none">
+                                <a
+                                    #Chats="routerLinkActive"
+                                    [ngClass]="
+                                          Chats.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                    [routerLink]="['/Chats']"
+                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    routerLinkActive="routerLinkActive"
                                 >
-                                    <a
-                                        #adminEmployeeProducts="routerLinkActive"
-                                        [ngClass]="
-                                          adminEmployeeProducts.isActive
-                                            ? 'text-black bg-[#F5F8FA]'
-                                            : 'text-[#00000061] bg-white'
-                                        "
-                                        [routerLink]="['/employees/employees']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Employees</li>
-                                    </a>
-                                    <a
-                                        #admindepartmentProducts="routerLinkActive"
-                                        [ngClass]="
-                                          admindepartmentProducts.isActive
-                                            ? 'text-black bg-[#F5F8FA]'
-                                            : 'text-[#00000061] bg-white'
-                                        "
-                                        [routerLink]="['/employees/department']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Departments</li>
-                                    </a>
-                                    <a
-                                        #adminDesignationProducts="routerLinkActive"
-                                        [ngClass]="
-                                          adminDesignationProducts.isActive
-                                            ? 'text-black bg-[#F5F8FA]'
-                                            : 'text-[#00000061] bg-white'
-                                        "
-                                        [routerLink]="['/employees/jobPosition']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Designations</li>
-                                    </a>
-                                    <a
-                                        #adminJobRoleProducts="routerLinkActive"
-                                        [ngClass]="
-                                          adminJobRoleProducts.isActive
-                                            ? 'text-black bg-[#F5F8FA]'
-                                            : 'text-[#00000061] bg-white'
-                                        "
-                                        [routerLink]="['/employees/jobRole']"
-                                        class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                        routerLinkActive="routerLinkActive"
-                                    >
-                                        <li class="items-center px-2">Job Roles</li>
-                                    </a>
-
-                                </ul>
+                                    <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>Chats
+                                </a>
+                            </li>
+                            <li class="items-center cursor-pointer select-none">
+                                <a
+                                    #Posts="routerLinkActive"
+                                    [ngClass]="
+                                          Posts.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                    [routerLink]="['/posts']"
+                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    routerLinkActive="routerLinkActive"
+                                >
+                                    <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>Posts
+                                </a>
+                            </li>
+                            <li class="items-center cursor-pointer select-none">
+                                <a
+                                    #Dates="routerLinkActive"
+                                    [ngClass]="
+                                          Dates.isActive?'text-black bg-[#F5F8FA]': 'text-[#00000061]  bg-white'"
+                                    [routerLink]="['/date']"
+                                    class="text-black hover:text-black hover:bg-[#F5F8FA] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                    routerLinkActive="routerLinkActive"
+                                >
+                                    <i class="fi fi-rr-assessment text-lg group-hover:text-black"></i>Dates
+                                </a>
                             </li>
 
                         </ul>
@@ -469,7 +385,7 @@
     </div>
 
     <div class="p-2 lg:pl-72 relative">
-        <div class="sticky top-2  z-40 flex h-16 shrink-0  items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-primary/50 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 rounded-md">
+        <div class="sticky top-2  z-40 flex h-16 shrink-0  items-center gap-x-4  bg-white px-4 shadow-primary/50 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8 rounded-md">
 
             <button (click)="mobileSidebar = !mobileSidebar" class="-m-2.5 p-2.5 text-gray-700 lg:hidden" type="button">
                 <span class="sr-only">Open sidebar</span>
@@ -505,7 +421,7 @@
                     <div class="relative">
                         <button (click)="profile = !profile" aria-expanded="false" aria-haspopup="true" class="-m-1.5 flex items-center p-1.5" id="user-menu-button" type="button">
                             <span class="sr-only">Open user menu</span>
-                            <img alt="" class="h-8 w-8 rounded-full bg-gray-50">
+                            <img src="https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg" alt="" class="h-8 w-8 rounded-full bg-gray-50">
                             <span class="hidden lg:flex lg:items-center">
                                 <span aria-hidden="true" class="ml-4 text-sm font-semibold leading-6 text-gray-900"></span>
                                 <svg aria-hidden="true" class="ml-2 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -534,7 +450,7 @@
         </div>
 
         <main class="">
-            <div class=" overflow-y-scroll h-full bg-Secondary/20">
+            <div class=" overflow-y-scroll h-full bg-Secondary/20 p-4">
                 <router-outlet/>
             </div>
         </main>

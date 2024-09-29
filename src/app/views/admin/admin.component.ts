@@ -20,6 +20,8 @@ export class AdminComponent {
   assessmentCondition: boolean=false;
   configCondition: boolean=false;
   employeeCondition: boolean=false;
+  ClientsCondition: boolean=false;
   profile:boolean=false;
+  expertCondition=false;
 
 }
